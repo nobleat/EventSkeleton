@@ -5,7 +5,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
-db="exam_car_schema"
+db="project_schema"
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASS_REGEX = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
 
@@ -18,7 +18,6 @@ class User:
         self.password=data['password']
         self.created_at=data['created_at']
         self.updated_at=data['updated_at']
-        self.cars=[]
 
     @staticmethod
     def validate(data):

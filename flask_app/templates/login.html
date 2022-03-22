@@ -9,9 +9,21 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div style="width: 1200px; height: 600px; background-color: rgb(97, 76, 112); margin: auto; margin-top: 50px;"  id="mainbox">
+    <div id="left">
+        <div id="header" class="newsborder">
+            <h1>Welcome to: Title</h1>
+        </div>
+        <div id="newsbody" class="newsborder">
+            <h3>Here is some top news/events/information</h3>
+        </div>
+        <div id="footbanner" class="newsborder">
+            <h6>banner or image</h6>
+            <p>site made by Angela Noble</p>
+        </div>
+    </div>
+    <div id="right">
         <div id="register">
-        <h1 style="color: whitesmoke; text-align: center;">Register</h1>
+        <h1 style=" text-align: center;">Register</h1>
         <form action='/register' method = 'POST'>
         {% with messages = get_flashed_messages(category_filter=['register']) %}
     {% if messages %}
@@ -21,8 +33,11 @@
     {% endif %}
 {% endwith %}
             <div class="input-group">
-                <span class="input-group-text">First and last name</span>
+                <span class="input-group-text">First name</span>
                 <input type="text" name="first_name" class="form-control">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Last name</span>
                 <input type="text" name="last_name" class="form-control">
             </div>
             <div class="input-group">
@@ -41,7 +56,7 @@
         </form>
     </div>
     <div id = 'log'>
-        <h1 style="color: whitesmoke; text-align: center;">Login</h1>
+        <h1 style=" text-align: center;">Login</h1>
             <form action='/login', method='post'>
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
